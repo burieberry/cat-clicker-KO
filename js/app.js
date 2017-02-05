@@ -7,6 +7,20 @@ var viewModel = function() {
   this.imgSrc = ko.observable('img/434164568_fea0ad4013_z.jpg');
   this.imgAttr = ko.observable('https://www.flickr.com/photos.../');
 
+  this.level = ko.computed(function() {
+      if (this.clickCount() < 10) {
+        return 'Newborn';
+      } else if (this.clickCount() < 20) {
+        return 'Infant';
+      } else if (this.clickCount() < 30) {
+        return 'Teen';
+      } else if (this.clickCount() < 50) {
+        return 'Adult';
+      } else {
+        return 'Elderly';
+      }
+    }, this);
+
   // no need for get functions like before, ko does that automatically
   // need incrementCounter function to count # of clicks
   this.incrementCounter = function() {
