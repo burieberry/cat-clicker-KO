@@ -1,7 +1,4 @@
-var viewModel = function() {
-  // always start with this
-  // data goes in here
-  // now create the observables and observableArrays
+var Cat = function() {
   this.clickCount = ko.observable(0); // initial clickCount is 0
   this.name = ko.observable('Tabby');
   this.imgSrc = ko.observable('img/434164568_fea0ad4013_z.jpg');
@@ -27,16 +24,21 @@ var viewModel = function() {
     }
     return title;
   }, this);
+};
 
-  // need incrementCounter function to count # of clicks
+
+var viewModel = function() {
+  this.currentCat = ko.observable(new Cat());
+  var cat = this.currentCat();
+
+  // count # of clicks
   this.incrementCounter = function() {
-    // adds one to the value of this.clickCount
-    this.clickCount(this.clickCount() + 1);
+    cat.clickCount(cat.clickCount() + 1);
   };
 
   // return true if cat has nicknames
   this.hasNicknames = function() {
-    return this.nicknames().length > 0;
+    return cat.nicknames().length > 0;
   };
 };
 
