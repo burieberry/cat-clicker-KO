@@ -10,18 +10,23 @@ var viewModel = function() {
 
   // display cat level depending on clickCount
   this.level = ko.computed(function() {
-      if (this.clickCount() < 10) {
-        return 'Newborn';
-      } else if (this.clickCount() < 20) {
-        return 'Infant';
-      } else if (this.clickCount() < 30) {
-        return 'Teen';
-      } else if (this.clickCount() < 50) {
-        return 'Adult';
-      } else {
-        return 'Elderly';
-      }
-    }, this);
+    var title,
+        clicks = this.clickCount();
+    if (clicks < 10) {
+      title = 'Newborn';
+    } else if (clicks < 20) {
+      title = 'Infant';
+    } else if (clicks < 40) {
+      title = 'Child';
+    } else if (clicks < 60) {
+      title = 'Teen';
+    } else if (clicks < 100) {
+      title = 'Adult';
+    } else {
+      title = 'Ninja';
+    }
+    return title;
+  }, this);
 
   // need incrementCounter function to count # of clicks
   this.incrementCounter = function() {
