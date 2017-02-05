@@ -23,12 +23,20 @@ var viewModel = function() {
     }, this);
 
   // display cat nicknames
-  this.nicknames = ko.observableArray(['Tabtab', 'Tiba']);
+  this.nicknames = ko.observableArray(['Tabtab', 'Tiba', 'Tibabbap', 'Tabidibidi']);
+
+  // return true if cat has nicknames
+  this.hasNicknames = function() {
+    return this.nicknames().length > 0;
+  };
+
+  console.log(this.hasNicknames());
 
   // no need for get functions like before, ko does that automatically
   // need incrementCounter function to count # of clicks
   this.incrementCounter = function() {
-    this.clickCount(this.clickCount() + 1); // adds one to the value of this.clickCount
+    // adds one to the value of this.clickCount
+    this.clickCount(this.clickCount() + 1);
   };
 };
 
