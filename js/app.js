@@ -29,16 +29,15 @@ var Cat = function() {
 
 var viewModel = function() {
   this.currentCat = ko.observable(new Cat());
-  var cat = this.currentCat();
 
   // count # of clicks
   this.incrementCounter = function() {
-    cat.clickCount(cat.clickCount() + 1);
+    this.clickCount(this.clickCount() + 1);
   };
 
-  // return true if cat has nicknames
+  // true if cat has nicknames
   this.hasNicknames = function() {
-    return cat.nicknames().length > 0;
+    return this.currentCat().nicknames().length > 0;
   };
 };
 
