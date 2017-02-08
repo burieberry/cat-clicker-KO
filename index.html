@@ -13,11 +13,10 @@
             <h2 id="cat-name" data-bind="text: name"></h2>
             <h3 id="cat-level" data-bind="text: level"></h3>
             <div id="cat-count" data-bind="text: clickCount"></div>
-            <img id="cat-img" src="" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}" alt="cute cat">
-            <span id="credit">
-                <a href="" target="_blank" data-bind="attr: {href: imgAttr}, text: imgAttr">
-                </a>
-            </span>
+            <img id="cat-img" width="640" src="" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}" alt="cute cat">
+            <p id="credit">
+                <a href="" target="_blank" data-bind="attr: {href: imgAttr}">Pixabay</a>
+            </p>
         </div>
         <div data-bind="visible: $parent.hasNicknames()">
             <h3>Nicknames:</h3>
