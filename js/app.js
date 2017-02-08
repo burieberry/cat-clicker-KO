@@ -57,16 +57,19 @@ var Cat = function(data) {
   }, this);
 };
 
-
 var viewModel = function() {
   var self = this;
-  self.catList = ko.observableArray([]);
+  // note: self will always map to the viewModel
+  // using 'self' as a trick so app is not confused as to what
+  // this maps to inside initialCats.forEach function
+
+  this.catList = ko.observableArray([]);
 
   initialCats.forEach(function(catItem) {
-    self.catList.push(new Cat(catItem));
+    self.catList.push(new Cat(catItem));  // self is used here
   });
 
-  self.currentCat = ko.observable(new Cat({
+  this.currentCat = ko.observable(new Cat({
     clickCount: 0,
     name:'Bib',
     imgSrc: 'https://cdn.pixabay.com/photo/2016/11/21/14/47/adorable-1845790_960_720.jpg',
@@ -86,6 +89,5 @@ var viewModel = function() {
 };
 
 
-// activating knockout
+// activate knockout
 ko.applyBindings(new viewModel());
-
