@@ -6,7 +6,7 @@
 </head>
 <body>
     <div data-bind="with: currentCat">
-    <!-- sets binding context to currentCat, not ViewModel -->
+    <!-- sets binding context to Cat, not ViewModel -->
         <h1>Cat Clicker</h1>
         <p>Select a cat to see profile:</p>
         <ul id="cat-list" data-bind="foreach: $parent.catList">

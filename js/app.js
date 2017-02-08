@@ -35,6 +35,9 @@ var initialCats = [
     nicknames: ['Sleepyhead']
   }];
 
+// TODO: add other attributions
+// TODO: styling
+
 var Cat = function(data) {
   this.clickCount = ko.observable(data.clickCount);
   this.name = ko.observable(data.name);
