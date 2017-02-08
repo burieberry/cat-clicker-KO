@@ -14,7 +14,8 @@ Added dependencies. View should update (see the cat level change) as click data 
 ## How to Use
 
 - Download repo and open `index.html`
-- Click on the cat to increase its click count.
+- Select a cat from the list!
+- Click on the cat image to increase the selected cat's click count.
 - See cat's level change as click count increases.
 
 ***
