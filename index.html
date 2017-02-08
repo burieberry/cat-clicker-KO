@@ -7,7 +7,8 @@
 <body>
     <div data-bind="with: currentCat">
     <!-- sets binding context to currentCat, not ViewModel -->
-        <ul id="cat-list">
+        <ul id="cat-list" data-bind="foreach: $parent.catList">
+            <button data-bind="text: name"></button>
         </ul>
         <div id="cat">
             <h2 id="cat-name" data-bind="text: name"></h2>

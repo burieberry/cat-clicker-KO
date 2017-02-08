@@ -76,6 +76,7 @@ var viewModel = function() {
     self.catList.push(new Cat(catItem));  // self is used here
   });
 
+  // set first cat as currentCat
   this.currentCat = ko.observable(this.catList()[0]);
 
   // count # of clicks
