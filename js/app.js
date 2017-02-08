@@ -1,38 +1,38 @@
 var initialCats = [
   {
     clickCount: 0,
-    name:'Bib',
-    imgSrc: 'https://cdn.pixabay.com/photo/2016/11/21/14/47/adorable-1845790_960_720.jpg',
-    imgAttr: 'https://cdn.pixabay.com/photo/2016/11/21/14/47/adorable-1845790_960_720.jpg',
+    name:'Tabby',
+    imgSrc: 'img/434164568_fea0ad4013_z.jpg',
+    imgAttr: 'https://www.flickr.com/photos/bigtallguy/434164568/in/album-72157594351075652/',
     nicknames: ['Bibo', 'Bibi', 'Bibbob', 'Bilbo']
   },
   {
     clickCount: 0,
+    name: 'Lily',
+    imgSrc: 'img/22252709_010df3379e_z.jpg',
+    imgAttr: '',
+    nicknames: ['PrettyFace']
+  },
+  {
+    clickCount: 0,
+    name: 'Pidgey',
+    imgSrc: 'img/1413379559_412a540d29_z.jpg',
+    imgAttr: '',
+    nicknames: ['WildFace']
+  },
+  {
+    clickCount: 0,
+    name: 'TigerCub',
+    imgSrc: 'img/4154543904_6e2428c421_z.jpg',
+    imgAttr: '',
+    nicknames: []
+  },
+  {
+    clickCount: 0,
     name: 'Snooze',
-    imgSrc: 'https://cdn.pixabay.com/photo/2016/12/16/20/09/cat-1912251_960_720.jpg',
-    imgAttr: 'https://cdn.pixabay.com/photo/2016/12/16/20/09/cat-1912251_960_720.jpg',
+    imgSrc: 'img/9648464288_2516b35537_z.jpg',
+    imgAttr: '',
     nicknames: ['Sleepyhead']
-  },
-  {
-    clickCount: 0,
-    name: 'Madison',
-    imgSrc: 'https://cdn.pixabay.com/photo/2017/01/28/18/50/cat-2016196_960_720.jpg',
-    imgAttr: 'https://cdn.pixabay.com/photo/2017/01/28/18/50/cat-2016196_960_720.jpg',
-    nicknames: ['you fancy']
-  },
-  {
-    clickCount: 0,
-    name: 'Tully',
-    imgSrc: 'https://cdn.pixabay.com/photo/2017/01/19/12/05/cat-1992140_960_720.jpg',
-    imgAttr: 'https://cdn.pixabay.com/photo/2017/01/19/12/05/cat-1992140_960_720.jpg',
-    nicknames: ['']
-  },
-  {
-    clickCount: 0,
-    name: 'Poppy',
-    imgSrc: 'https://pixabay.com/en/kitten-cute-cat-white-domestic-1285341/',
-    imgAttr: 'https://pixabay.com/en/kitten-cute-cat-white-domestic-1285341/',
-    nicknames: ['']
   }];
 
 var Cat = function(data) {
@@ -78,6 +78,11 @@ var viewModel = function() {
 
   // set first cat as currentCat
   this.currentCat = ko.observable(this.catList()[0]);
+
+  this.setCat = function(cat) {
+    var index = self.catList.indexOf(cat);
+    return self.currentCat = ko.observable(self.catList()[index]);
+  };
 
   // count # of clicks
   this.incrementCounter = function() {

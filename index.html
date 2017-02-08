@@ -11,7 +11,7 @@
         <p>Select a cat to see profile:</p>
         <ul id="cat-list" data-bind="foreach: $parent.catList">
             <li>
-                <button data-bind="text: name"></button>
+                <button data-bind="text: name, click: $root.currentCat"></button>
             </li>
         </ul>
         <div id="cat">
@@ -20,7 +20,7 @@
             <div id="cat-count" data-bind="text: clickCount"></div>
             <img id="cat-img" width="640" src="" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}" alt="cute cat">
             <p id="credit">
-                <a href="" target="_blank" data-bind="attr: {href: imgAttr}">Pixabay</a>
+                <a href="" target="_blank" data-bind="attr: {href: imgAttr}, text: imgAttr"></a>
             </p>
         </div>
         <div data-bind="visible: $parent.hasNicknames()">
