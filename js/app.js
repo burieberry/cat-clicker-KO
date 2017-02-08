@@ -83,8 +83,7 @@ var viewModel = function() {
   this.currentCat = ko.observable(this.catList()[0]);
 
   this.setCat = function(cat) {
-    var index = self.catList.indexOf(cat);
-    return self.currentCat = ko.observable(self.catList()[index]);
+    self.currentCat(cat);
   };
 
   // count # of clicks
@@ -92,7 +91,6 @@ var viewModel = function() {
     this.clickCount(this.clickCount() + 1);
   };
 };
-
 
 // activate knockout
 ko.applyBindings(new viewModel());
