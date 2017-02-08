@@ -25,7 +25,7 @@ var initialCats = [
     name: 'TigerCub',
     imgSrc: 'img/4154543904_6e2428c421_z.jpg',
     imgAttr: '',
-    nicknames: []
+    nicknames: ['Little Big Cat']
   },
   {
     clickCount: 0,
@@ -87,11 +87,6 @@ var viewModel = function() {
   // count # of clicks
   this.incrementCounter = function() {
     this.clickCount(this.clickCount() + 1);
-  };
-
-  // true if cat has nicknames
-  this.hasNicknames = function() {
-    return this.currentCat().nicknames().length > 0;
   };
 };
 
